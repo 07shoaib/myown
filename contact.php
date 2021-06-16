@@ -9,7 +9,7 @@
 
        if(empty($YourName) || empty($Email) || empty($YourPh_no))
        {
-           header('location:index.php?error');
+           header('location:index.html?error');
        }
        else
        {
@@ -17,13 +17,13 @@
 
            if(mail($to,$Subject,$Email))
            {
-               header("location:index.php?success");
+               header("location:index.html?success");
            }
        }
     }
     else
     {
-        header("location:index.php");
+        header("location:index.html");
     }
 ?>
 
