@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Contact Form</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div class="contact-title">
+		<h1>Welcome</h1>
+		<h2>We are ready to teach you</h2>
+	</div>
+
+	<div class="contact-form">
+		<form id="contact-form" method="post" action="contact.php">
+			         <?php 
+                            $Msg = "";
+                            if(isset($_GET['error']))
+                            {
+                                $Msg = " Please Fill in the Blanks ";
+                                echo '<div class="alert alert-danger">'.$Msg.'</div>';
+                            }
+
+                            if(isset($_GET['success']))
+                            {
+                                $Msg = " Your Message Has Been Sent ";
+                                echo '<div class="alert alert-success">'.$Msg.'</div>';
+                            }
+                        
+                        ?>
+			<input type="text" name="UName" class="form-control" placeholder="Your Name" required=""><br>
+			<input type="text" name="Email" class="form-control" placeholder="Your Email" required=""><br>
+			<input type="tel" name="Ph_no" class="form-control" placeholder="Your Ph_no" required=""><br>
+			<label for="yes_no_radio">Are you intrested in Aviation?</label>
+				<p>
+					<input type="radio" name="yes_no" checked>Yes</input>
+				
+					<input type="radio" name="yes_no">No</input>
+				</p>
+			
+			<button name="btn-send" type="submit" class="form-control submit"  value="send message" ></button>
+		</form>
+	</div>
+
+
+</body>
+</html>
